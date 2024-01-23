@@ -30,9 +30,7 @@ extension WebView: UIViewRepresentable {
     func makeUIView(context: Context) -> WKWebView {
         let webview = WKWebView()
         
-        webview.scrollView.bounces = false
         webview.navigationDelegate = context.coordinator
-        webview.scrollView.isScrollEnabled = false
         
         DispatchQueue.main.async {
             let bundleURL = Bundle.main.bundleURL

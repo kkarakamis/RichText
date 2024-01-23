@@ -21,13 +21,16 @@ public struct RichText: View {
     }
 
     public var body: some View {
-        ZStack(alignment: .top) {
-            WebView(dynamicHeight: $dynamicHeight, html: html, configuration: configuration)
-                .frame(height: dynamicHeight)
+        VStack {
+            ZStack(alignment: .top) {
+                WebView(dynamicHeight: $dynamicHeight, html: html, configuration: configuration)
+                    .frame(height: dynamicHeight)
 
-            if self.dynamicHeight == 0 {
-                placeholder
+                if self.dynamicHeight == 0 {
+                    placeholder
+                }
             }
+            Spacer()
         }
     }
 }
